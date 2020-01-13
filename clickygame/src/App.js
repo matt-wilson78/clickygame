@@ -1,26 +1,41 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, { Component } from 'react';
+import Navbar from "./components/Navbar";
+import Card from "./components/Card";
+import albums from "./albums.json"
 import './App.css';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends Component {
+
+  state = {
+    albums: albums,
+    score: 0,
+    topScore: 0
+  }
+
+  randomizer = albums => {
+    const currentIndex = albums.length;
+    let temporaryValue, randomIndex;
+
+    while (0 !== currentIndex) {
+      randomIndex = Math.floor(Math.random() * currentIndex);
+      currentIndex -= 1;
+
+      temporaryValue = albums[currentIndex];
+      albums[currentIndex] = albums[randomIndex];
+      albums[randomIndex] = temporaryValue
+    }
+
+    return albums;
+  }
+
+  handleClick = id => {
+    const albums = this.state.albums;
+
+    const picClicked = albums.filter(clicked => clicked.id === id);
+
+    
+  }
+
 }
 
 export default App;

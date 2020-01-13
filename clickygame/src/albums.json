@@ -1,0 +1,74 @@
+[
+    {
+        "id": 1,
+        "name": "Blackstar",
+        "image": "../public/assets/images/blackstar.jpg",
+        "clicked": false
+    },
+    {
+        "id": 2,
+        "name": "Blackwater Park",
+        "image": "../public/assets/images/blackwater_park.png",
+        "clicked": false
+    },
+    {
+        "id": 3,
+        "name": "Crooked Rain",
+        "image": "../public/assets/images/crooked_rain.jpg",
+        "clicked": false
+    },
+    {
+        "id": 4,
+        "name": "Grateful Dead",
+        "image": "../public/assets/images/grateful_dead.jpg",
+        "clicked": false
+    },
+    {
+        "id": 5,
+        "name": "From Mars to Sirius",
+        "image": "../public/assets/images/mars_to_sirius.jpg",
+        "clicked": false
+    },
+    {
+        "id": 6,
+        "name": "Dirt",
+        "image": "../public/assets/images/dirt.jpg",
+        "clicked": false
+    },
+    {
+        "id": 7,
+        "name": "Moving Pictures",
+        "image": "../public/assets/images/moving_pictures.jpg",
+        "clicked": false
+    },
+    {
+        "id": 8,
+        "name": "Peace Sells",
+        "image": "../public/assets/images/peace_sells.jpg",
+        "clicked": false
+    },
+    {
+        "id": 9,
+        "name": "Sebadoh",
+        "image": "../public/assets/images/sebadoh.jpg",
+        "clicked": false
+    },
+    {
+        "id": 10,
+        "name": "South of Heaven",
+        "image": "../public/assets/images/south_of_heaven.jpg",
+        "clicked": false
+    },
+    {
+        "id": 11,
+        "name": "The Wall",
+        "image": "../public/assets/images/the_wall.jpg",
+        "clicked": false
+    },
+    {
+        "id": 12,
+        "name": "Transformer",
+        "image": "../public/assets/images/transformer.jpg",
+        "clicked": false
+    }
+]
