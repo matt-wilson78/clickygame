@@ -1,41 +1,64 @@
-import React, { Component } from 'react';
-import Navbar from "./components/Navbar";
+import React, { Component } from "react";
 import Card from "./components/Card";
-import albums from "./albums.json"
-import './App.css';
+import Wrapper from "./components/Wrapper";
+import Header from "./components/Header";
+import covers from "./covers.json";
+import "./App.css";
 
 class App extends Component {
-
+  // Setting this.state.covers to the covers json array
   state = {
-    albums: albums,
+    covers,
     score: 0,
-    topScore: 0
-  }
+    highscore: 0
+  };
 
-  randomizer = albums => {
-    const currentIndex = albums.length;
-    let temporaryValue, randomIndex;
-
-    while (0 !== currentIndex) {
-      randomIndex = Math.floor(Math.random() * currentIndex);
-      currentIndex -= 1;
-
-      temporaryValue = albums[currentIndex];
-      albums[currentIndex] = albums[randomIndex];
-      albums[randomIndex] = temporaryValue
+  gameOver = () => {
+    if (this.state.score > this.state.highscore) {
+      this.setState({highscore: this.state.score}, function() {
+        console.log(this.state.highscore);
+      });
     }
-
-    return albums;
+    this.state.covers.forEach(cover => {
+      cover.count = 0;
+    });
+    alert(`Game Over :( \nscore: ${this.state.score}`);
+    this.setState({score: 0});
+    return true;
   }
 
-  handleClick = id => {
-    const albums = this.state.albums;
-
-    const picClicked = albums.filter(clicked => clicked.id === id);
-
-    
+  clickCount = id => {
+    this.state.covers.find((o, i) => {
+      if (o.id === id) {
+        if(covers[i].count === 0){
+          covers[i].count = covers[i].count + 1;
+          this.setState({score : this.state.score + 1}, function(){
+            console.log(this.state.score);
+          });
+          this.state.covers.sort(() => Math.random() - 0.5)
+          return true; 
+        } else {
+          this.gameOver();
+        }
+      }
+    });
   }
-
+  // Map over this.state.covers and render a Card component for each cover object
+  render() {
+    return (
+      <Wrapper>
+        <Header score={this.state.score} highscore={this.state.highscore}>Clicky Game</Header>
+        {this.state.covers.map(cover => (
+          <Card
+            clickCount={this.clickCount}
+            id={cover.id}
+            key={cover.id}
+            image={cover.image}
+          />
+        ))}
+      </Wrapper>
+    );
+ }
 }
 
 export default App;

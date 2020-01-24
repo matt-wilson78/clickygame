@@ -1,0 +1,27 @@
+{
+  "name": "clickygame",
+  "version": "1.0.0",
+  "description": "clicky game",
+  "main": "index.js",
+  "scripts": {
+    "test": "react-scripts test --env=jsdom",
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "eject": "react-scripts eject"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/matt-wilson78/clickygame.git"
+  },
+  "author": "Matt Wilson",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/matt-wilson78/clickygame/issues"
+  },
+  "homepage": "https://github.com/matt-wilson78/clickygame#readme",
+  "dependencies": {
+    "react": "^16.12.0",
+    "react-dom": "^16.12.0",
+    "react-scripts": "^3.3.0"
+  }
+}
